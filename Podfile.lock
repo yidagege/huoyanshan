@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - GPUImage (0.1.7)
+  - Masonry (1.1.0)
+  - Yoga (1.6.0)
+  - YogaKit (1.6.0):
+    - Yoga (~> 1.6)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - GPUImage (~> 0.1.7)
+  - Masonry
+  - YogaKit (~> 1.5)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
+  YogaKit: 8fe0ddd21673226c0b6077fc3ad5c8fa6cda722e
+
+PODFILE CHECKSUM: 82dea44ba615208637d69ae148ea46364a354c6e
+
+COCOAPODS: 1.0.1
