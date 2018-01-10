@@ -18,6 +18,11 @@
 		2D8AB1D320038CD800EA1A55 /* AVPlayerCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8AB1D220038CD800EA1A55 /* AVPlayerCacheViewController.m */; };
 		2D8AB1D42003919C00EA1A55 /* 录屏1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2D8AB1CC20038AFF00EA1A55 /* 录屏1.mov */; };
 		2D8AB1D52003919C00EA1A55 /* 录屏2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2D8AB1CD20038B0000EA1A55 /* 录屏2.mov */; };
+		2D913E142005FC5C004DE6FF /* YDPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D913E132005FC5C004DE6FF /* YDPlayer.m */; };
+		2D913E1720060065004DE6FF /* YDResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D913E1620060065004DE6FF /* YDResourceLoader.m */; };
+		2D913E1E20061761004DE6FF /* YDFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D913E1D20061761004DE6FF /* YDFileHandle.m */; };
+		2D913E2220062B28004DE6FF /* NSURL+YDLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D913E2120062B28004DE6FF /* NSURL+YDLoader.m */; };
+		2D913E2520062B41004DE6FF /* NSString+YDLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D913E2420062B41004DE6FF /* NSString+YDLoader.m */; };
 		2D9F3C921FFFD5A400A991EB /* BeautifyFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3C8F1FFFD5A400A991EB /* BeautifyFilterViewController.m */; };
 		2D9F3C931FFFD5A400A991EB /* BeautifyFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3C8F1FFFD5A400A991EB /* BeautifyFilterViewController.m */; };
 		2D9F3C941FFFD5A400A991EB /* BeautifyFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3C8F1FFFD5A400A991EB /* BeautifyFilterViewController.m */; };
@@ -89,6 +94,21 @@
 		2D8AB1CD20038B0000EA1A55 /* 录屏2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "录屏2.mov"; sourceTree = "<group>"; };
 		2D8AB1D120038CD800EA1A55 /* AVPlayerCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerCacheViewController.h; sourceTree = "<group>"; };
 		2D8AB1D220038CD800EA1A55 /* AVPlayerCacheViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerCacheViewController.m; sourceTree = "<group>"; };
+		2D913E122005FC5C004DE6FF /* YDPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDPlayer.h; sourceTree = "<group>"; };
+		2D913E132005FC5C004DE6FF /* YDPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDPlayer.m; sourceTree = "<group>"; };
+		2D913E1520060065004DE6FF /* YDResourceLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDResourceLoader.h; sourceTree = "<group>"; };
+		2D913E1620060065004DE6FF /* YDResourceLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDResourceLoader.m; sourceTree = "<group>"; };
+		2D913E1820060B51004DE6FF /* p190415_128k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p190415_128k.jpg; sourceTree = "<group>"; };
+		2D913E1920060B51004DE6FF /* p1458183_128k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p1458183_128k.jpg; sourceTree = "<group>"; };
+		2D913E1A20060B51004DE6FF /* p1393354_128k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p1393354_128k.jpg; sourceTree = "<group>"; };
+		2D913E1B20060B51004DE6FF /* p966452_128k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p966452_128k.jpg; sourceTree = "<group>"; };
+		2D913E1C20061761004DE6FF /* YDFileHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDFileHandle.h; sourceTree = "<group>"; };
+		2D913E1D20061761004DE6FF /* YDFileHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDFileHandle.m; sourceTree = "<group>"; };
+		2D913E2020062B28004DE6FF /* NSURL+YDLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+YDLoader.h"; sourceTree = "<group>"; };
+		2D913E2120062B28004DE6FF /* NSURL+YDLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+YDLoader.m"; sourceTree = "<group>"; };
+		2D913E2320062B41004DE6FF /* NSString+YDLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YDLoader.h"; sourceTree = "<group>"; };
+		2D913E2420062B41004DE6FF /* NSString+YDLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YDLoader.m"; sourceTree = "<group>"; };
+		2D913E2620062B73004DE6FF /* YDLoaderCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLoaderCategory.h; sourceTree = "<group>"; };
 		2D9F3C8E1FFFD5A400A991EB /* BeautifyFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautifyFilterViewController.h; sourceTree = "<group>"; };
 		2D9F3C8F1FFFD5A400A991EB /* BeautifyFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautifyFilterViewController.m; sourceTree = "<group>"; };
 		2D9F3C901FFFD5A400A991EB /* GPUImageFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageFilterViewController.h; sourceTree = "<group>"; };
@@ -214,6 +234,10 @@
 				2D9F3CDB2001D75900A991EB /* 亡灵序曲.mp3 */,
 				2D9F3CDC2001D75900A991EB /* 我的滑板鞋.mp3 */,
 				2D9F3CDD2001D75900A991EB /* 陈奕迅.mp3 */,
+				2D913E1820060B51004DE6FF /* p190415_128k.jpg */,
+				2D913E1B20060B51004DE6FF /* p966452_128k.jpg */,
+				2D913E1A20060B51004DE6FF /* p1393354_128k.jpg */,
+				2D913E1920060B51004DE6FF /* p1458183_128k.jpg */,
 			);
 			path = resourse;
 			sourceTree = "<group>";
@@ -235,8 +259,35 @@
 			children = (
 				2D8AB1D120038CD800EA1A55 /* AVPlayerCacheViewController.h */,
 				2D8AB1D220038CD800EA1A55 /* AVPlayerCacheViewController.m */,
+				2D913E1F20062A5E004DE6FF /* category */,
+				2D913E112005FC36004DE6FF /* loader */,
 			);
 			path = AVPlayerCache;
+			sourceTree = "<group>";
+		};
+		2D913E112005FC36004DE6FF /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				2D913E122005FC5C004DE6FF /* YDPlayer.h */,
+				2D913E132005FC5C004DE6FF /* YDPlayer.m */,
+				2D913E1520060065004DE6FF /* YDResourceLoader.h */,
+				2D913E1620060065004DE6FF /* YDResourceLoader.m */,
+				2D913E1C20061761004DE6FF /* YDFileHandle.h */,
+				2D913E1D20061761004DE6FF /* YDFileHandle.m */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
+		2D913E1F20062A5E004DE6FF /* category */ = {
+			isa = PBXGroup;
+			children = (
+				2D913E2620062B73004DE6FF /* YDLoaderCategory.h */,
+				2D913E2020062B28004DE6FF /* NSURL+YDLoader.h */,
+				2D913E2120062B28004DE6FF /* NSURL+YDLoader.m */,
+				2D913E2320062B41004DE6FF /* NSString+YDLoader.h */,
+				2D913E2420062B41004DE6FF /* NSString+YDLoader.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 		2D9F3C8D1FFFD54000A991EB /* GPUImageFilters */ = {
@@ -497,12 +548,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D0682E01D6E7ABB00505BC7 /* ViewController.m in Sources */,
+				2D913E1720060065004DE6FF /* YDResourceLoader.m in Sources */,
 				2D0682DD1D6E7ABB00505BC7 /* AppDelegate.m in Sources */,
 				2D0682DA1D6E7ABB00505BC7 /* main.m in Sources */,
 				2D9F3CF82001D79F00A991EB /* VideoMergeViewController.m in Sources */,
 				2D9F3C9A1FFFD5B600A991EB /* GPUImageBeautifyFilter.m in Sources */,
+				2D913E142005FC5C004DE6FF /* YDPlayer.m in Sources */,
 				2D9F3CE12001D75900A991EB /* AudioMixViewController.m in Sources */,
+				2D913E1E20061761004DE6FF /* YDFileHandle.m in Sources */,
 				2D9F3C921FFFD5A400A991EB /* BeautifyFilterViewController.m in Sources */,
+				2D913E2220062B28004DE6FF /* NSURL+YDLoader.m in Sources */,
+				2D913E2520062B41004DE6FF /* NSString+YDLoader.m in Sources */,
 				2D9F3C951FFFD5A400A991EB /* GPUImageFilterViewController.m in Sources */,
 				2D9F3CFD2001D8DC00A991EB /* VideoMergePlayView.m in Sources */,
 				2D8AB1D320038CD800EA1A55 /* AVPlayerCacheViewController.m in Sources */,
