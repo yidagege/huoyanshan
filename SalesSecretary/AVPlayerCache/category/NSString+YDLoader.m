@@ -10,4 +10,17 @@
 
 @implementation NSString (YDLoader)
 
++ (NSString *)tempFilePath{
+    return [[NSHomeDirectory( ) stringByAppendingPathComponent:@"tmp"] stringByAppendingPathComponent:@"MusicTemp.mp4"];
+
+}
+
++ (NSString *)cacheFolderPath {
+    return [[NSHomeDirectory( ) stringByAppendingPathComponent:@"Library"] stringByAppendingPathComponent:@"MusicCaches"];
+}
+
++ (NSString *)fileNameWithURL:(NSURL *)url {
+    return [[url.path componentsSeparatedByString:@"/"] lastObject];
+}
+
 @end

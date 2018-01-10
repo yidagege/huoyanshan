@@ -96,9 +96,28 @@
     }
     [self.player pause];
     [self.resourceLoader stopLoading];
-    [self rem]
-    
+    [self removeObserver];
+    self.resourceLoader = nil;
+    self.currentItem = nil;
+    self.player= nil;
+    self.progress = 0.0;
+    self.duration = 0.0;
+    self.state = YDPlayerStateStopped;
 }
+
+- (void)seekToTime:(CGFloat)seconds{
+    if (self.state==YDPlayerStatePlaying || self.state == YDPlayerStatePaused) {
+        // 暂停后滑动slider后    暂停播放状态
+        // 播放中后滑动slider后   自动播放状态
+        self.resourceLoader.seekRequired = YES;
+        [self.player seekToTime:CMTimeMakeWithSeconds(seconds, NSEC_PER_SEC) completionHandler:^(BOOL finished) {
+            if ([self isPlaying]) {
+                [self.player play];
+            }
+        }];
+    }
+}
+
 
 #pragma mark - NSNotification 监听播放器打断处理
 - (void)audioSessionInterrupted:(NSNotification *)notification{
@@ -115,7 +134,7 @@
 #pragma mark - KVO
 - (void)addObserver {
     AVPlayerItem *songItem = self.currentItem;
-    //播放完成
+    //监听播放完成
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(playbackFinished) name:AVPlayerItemDidPlayToEndTimeNotification object:songItem];
     //播放进度
     __weak typeof(self) weakSelf = self;
@@ -126,20 +145,107 @@
         weakSelf.progress = current / total;
     }];
     [self.player addObserver:self forKeyPath:@"rate" options:NSKeyValueObservingOptionNew context:nil];
-    [self.player addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
-    [self.player addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    [self.player addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
-    [self.player addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
-    
+    [songItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
+    [songItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [songItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+    [songItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)removeObserver{
+    AVPlayerItem *songItem = self.currentItem;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if (self.timeObserve) {
+        [self.player removeTimeObserver:self.timeObserve];
+        self.timeObserve = nil;
+    }
     
+    [songItem removeObserver:self forKeyPath:@"status"];
+    [songItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    [songItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
+    [songItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+    [self.player removeObserver:self forKeyPath:@"rate"];
+    [self.player replaceCurrentItemWithPlayerItem:nil];
+}
+
+/**
+ *  通过KVO监控播放器状态
+ */
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    AVPlayerItem *songItem = object;
+    if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
+        NSArray *array = songItem.loadedTimeRanges;
+        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue];//本次缓冲的时间范围
+        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration);
+        NSLog(@"共缓冲%.2f",totalBuffer);
+    }
+    if ([keyPath isEqualToString:@"rate"]) {
+        if (self.player.rate == 0.0) {
+            _state = YDPlayerStatePaused;
+        }else{
+            _state = YDPlayerStatePlaying;
+        }
+    }
 }
 
 - (void)playbackFinished {
     NSLog(@"播放完成");
     [self stop];
+}
+
+#pragma mark - YDLoaderDelegate
+- (void)loader:(YDResourceLoader *)loader cacheProgress:(CGFloat)progress {
+    self.cacheProgress = progress;
+}
+
+#pragma mark - Property Set
+- (void)setProgress:(CGFloat)progress{
+    [self willChangeValueForKey:@"progress"];
+    _progress = progress;
+    [self didChangeValueForKey:@"progress"];
+}
+
+- (void)setState:(YDPlayerState)state{
+    [self willChangeValueForKey:@"progress"];
+    _state = state;
+    [self didChangeValueForKey:@"progress"];
+}
+
+- (void)setCacheProgress:(CGFloat)cacheProgress {
+    [self willChangeValueForKey:@"progress"];
+    _cacheProgress = cacheProgress;
+    [self didChangeValueForKey:@"progress"];
+}
+
+- (void)setDuration:(CGFloat)duration{
+    if (duration != _duration && !isnan(duration)) {
+        [self willChangeValueForKey:@"duration"];
+        NSLog(@"duration %f",duration);
+        _duration = duration;
+        [self didChangeValueForKey:@"duration"];
+    }
+}
+
+
+- (BOOL)currentItemCacheState{
+    if ([self.url.absoluteString hasPrefix:@"http"]) {
+        if (self.resourceLoader) {
+            return self.resourceLoader.cacheFinished;
+        }
+        return YES;
+    }
+    return NO;
+}
+
+- (NSString *)currentItemCacheFilePath{
+    if ([self currentItemCacheState]==NO) {
+        return nil;
+    }
+    return [NSString stringWithFormat:@"%@/%@", [NSString cacheFolderPath], [NSString fileNameWithURL:self.url]];;
+}
++ (BOOL)clearCache {
+    [YDFileHandle clearCache];
+    return YES;
 }
 
 @end
