@@ -9,7 +9,7 @@ target 'SalesSecretary' do
     pod 'AFNetworking', '~> 3.1.0'
     pod 'GPUImage', '~> 0.1.7'
     pod 'Masonry'
-    pod 'YogaKit', '~> 1.5'
-    use_frameworks!
-    
+#    pod 'YogaKit', '~> 1.5'
+#    use_frameworks!
+
 end

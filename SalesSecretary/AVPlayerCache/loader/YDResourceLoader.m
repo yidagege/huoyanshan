@@ -10,7 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface YDResourceLoader()
-@property (nonatomic, copy)NSMutableArray *requestList;
+@property (nonatomic, strong)NSMutableArray *requestList;
 @property (nonatomic, strong)YDRequestTask *requestTask;
 
 @end

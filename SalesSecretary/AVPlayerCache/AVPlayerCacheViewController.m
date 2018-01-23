@@ -83,7 +83,9 @@
     
     int min = time / 60.0;
     int sec = time - min * 60;
-    NSString *minStr = min > 9 ? [NSString stringWithFormat:@"%d",min] : [NSString stringWithFormat:@"0%d,min"];
+//    NSString *minStr = min > 9 ? [NSString stringWithFormat:@"%d",min] : [NSString stringWithFormat:@"0%d,min"];
+    NSString * minStr = min > 9 ? [NSString stringWithFormat:@"%d",min] : [NSString stringWithFormat:@"0%d",min];
+
     NSString *secStr = sec > 9 ? [NSString stringWithFormat:@"%d",sec] : [NSString stringWithFormat:@"0%d",sec];
     NSString *timeStr = [NSString stringWithFormat:@"%@:%@",minStr,secStr];
     return timeStr;
@@ -97,6 +99,7 @@
     self.coverIv = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width - 200)/2, 80, 200, 200)];
     [self.view addSubview:self.coverIv];
     self.songName = [[UILabel alloc]initWithFrame:CGRectMake(0, 320, self.view.frame.size.width, 40)];
+    self.songName.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.songName];
     
     self.currentTime = [[UILabel alloc]initWithFrame:CGRectMake(0, 380, 45, 20)];

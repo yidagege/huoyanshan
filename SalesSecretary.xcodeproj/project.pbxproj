@@ -54,7 +54,7 @@
 		2D9F3CFD2001D8DC00A991EB /* VideoMergePlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3CFC2001D8DC00A991EB /* VideoMergePlayView.m */; };
 		2D9F3CFE2001D8DC00A991EB /* VideoMergePlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3CFC2001D8DC00A991EB /* VideoMergePlayView.m */; };
 		2D9F3CFF2001D8DC00A991EB /* VideoMergePlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9F3CFC2001D8DC00A991EB /* VideoMergePlayView.m */; };
-		A96D43C668F1657622E22C9C /* Pods_SalesSecretary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FF85D0288CEC4B22D496E5 /* Pods_SalesSecretary.framework */; };
+		8BF98750BB8F50114524CF49 /* libPods-SalesSecretary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBF9C079A1653F81859059F /* libPods-SalesSecretary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +130,7 @@
 		2D9F3CFC2001D8DC00A991EB /* VideoMergePlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoMergePlayView.m; sourceTree = "<group>"; };
 		38374108669C4BEBD90EDFBA /* Pods-SalesSecretary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesSecretary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SalesSecretary/Pods-SalesSecretary.debug.xcconfig"; sourceTree = "<group>"; };
 		433E8A7B5B51FF8F81773AC3 /* Pods-SalesSecretary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SalesSecretary.release.xcconfig"; path = "Pods/Target Support Files/Pods-SalesSecretary/Pods-SalesSecretary.release.xcconfig"; sourceTree = "<group>"; };
-		B1FF85D0288CEC4B22D496E5 /* Pods_SalesSecretary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SalesSecretary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEBF9C079A1653F81859059F /* libPods-SalesSecretary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SalesSecretary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96D43C668F1657622E22C9C /* Pods_SalesSecretary.framework in Frameworks */,
+				8BF98750BB8F50114524CF49 /* libPods-SalesSecretary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +337,7 @@
 		E51CDA3C197EC2F9BD2C2B2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B1FF85D0288CEC4B22D496E5 /* Pods_SalesSecretary.framework */,
+				DEBF9C079A1653F81859059F /* libPods-SalesSecretary.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -518,9 +518,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SalesSecretary/Pods-SalesSecretary-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
