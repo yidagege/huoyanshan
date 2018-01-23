@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "YDRequestTask.h"
+
 #define MimeType @"video/mp4"
+
 // http://www.cnblogs.com/machao/p/5667867.html  blog说明
 @class YDResourceLoader;
 @protocol YDLoaderDelegate <NSObject>
@@ -20,7 +23,7 @@
 
 @end
 
-@interface YDResourceLoader : NSObject<AVAssetResourceLoaderDelegate>
+@interface YDResourceLoader : NSObject<AVAssetResourceLoaderDelegate, YDRequestTaskDelegate>
 @property (nonatomic, weak) id<YDLoaderDelegate> delegate;
 @property (atomic, assign) BOOL seekRequired;//seek标志
 @property (nonatomic, assign)BOOL cacheFinished;

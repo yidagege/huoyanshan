@@ -7,7 +7,22 @@
 //
 
 #import "YDFileHandle.h"
+#import "NSString+YDLoader.h"
+
+@interface YDFileHandle ()
+@property (nonatomic, strong)NSFileHandle *writeFileHandle;
+@property (nonatomic, strong) NSFileHandle * readFileHandle;
+@end
 
 @implementation YDFileHandle
+
++ (BOOL)createTempFile{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *path = [NSString tempFilePath];
+    if ([manager fileExistsAtPath:path]) {
+        [manager removeItemAtPath:path error:nil];
+    }
+    return [manager createFileAtPath:path contents:nil attributes:nil];
+}
 
 @end

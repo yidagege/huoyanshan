@@ -15,6 +15,7 @@
 		2D0682E81D6E7ABB00505BC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D0682E61D6E7ABB00505BC7 /* LaunchScreen.storyboard */; };
 		2D0682F31D6E7ABB00505BC7 /* SalesSecretaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0682F21D6E7ABB00505BC7 /* SalesSecretaryTests.m */; };
 		2D0682FE1D6E7ABB00505BC7 /* SalesSecretaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0682FD1D6E7ABB00505BC7 /* SalesSecretaryUITests.m */; };
+		2D6AD59520171E4D004F1379 /* YDRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6AD59420171E4D004F1379 /* YDRequestTask.m */; };
 		2D8AB1D320038CD800EA1A55 /* AVPlayerCacheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8AB1D220038CD800EA1A55 /* AVPlayerCacheViewController.m */; };
 		2D8AB1D42003919C00EA1A55 /* 录屏1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2D8AB1CC20038AFF00EA1A55 /* 录屏1.mov */; };
 		2D8AB1D52003919C00EA1A55 /* 录屏2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 2D8AB1CD20038B0000EA1A55 /* 录屏2.mov */; };
@@ -90,6 +91,8 @@
 		2D0682F91D6E7ABB00505BC7 /* SalesSecretaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalesSecretaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0682FD1D6E7ABB00505BC7 /* SalesSecretaryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SalesSecretaryUITests.m; sourceTree = "<group>"; };
 		2D0682FF1D6E7ABB00505BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D6AD59320171E4D004F1379 /* YDRequestTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDRequestTask.h; sourceTree = "<group>"; };
+		2D6AD59420171E4D004F1379 /* YDRequestTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDRequestTask.m; sourceTree = "<group>"; };
 		2D8AB1CC20038AFF00EA1A55 /* 录屏1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "录屏1.mov"; sourceTree = "<group>"; };
 		2D8AB1CD20038B0000EA1A55 /* 录屏2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "录屏2.mov"; sourceTree = "<group>"; };
 		2D8AB1D120038CD800EA1A55 /* AVPlayerCacheViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerCacheViewController.h; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				2D913E132005FC5C004DE6FF /* YDPlayer.m */,
 				2D913E1520060065004DE6FF /* YDResourceLoader.h */,
 				2D913E1620060065004DE6FF /* YDResourceLoader.m */,
+				2D6AD59320171E4D004F1379 /* YDRequestTask.h */,
+				2D6AD59420171E4D004F1379 /* YDRequestTask.m */,
 				2D913E1C20061761004DE6FF /* YDFileHandle.h */,
 				2D913E1D20061761004DE6FF /* YDFileHandle.m */,
 			);
@@ -550,6 +555,7 @@
 				2D0682E01D6E7ABB00505BC7 /* ViewController.m in Sources */,
 				2D913E1720060065004DE6FF /* YDResourceLoader.m in Sources */,
 				2D0682DD1D6E7ABB00505BC7 /* AppDelegate.m in Sources */,
+				2D6AD59520171E4D004F1379 /* YDRequestTask.m in Sources */,
 				2D0682DA1D6E7ABB00505BC7 /* main.m in Sources */,
 				2D9F3CF82001D79F00A991EB /* VideoMergeViewController.m in Sources */,
 				2D9F3C9A1FFFD5B600A991EB /* GPUImageBeautifyFilter.m in Sources */,
