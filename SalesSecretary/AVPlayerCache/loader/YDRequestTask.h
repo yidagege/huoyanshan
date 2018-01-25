@@ -23,7 +23,7 @@
 
 @end
 
-@interface YDRequestTask : NSObject<NSURLConnectionDataDelegate, NSURLSessionDelegate>
+@interface YDRequestTask : NSObject<NSURLConnectionDataDelegate, NSURLSessionDataDelegate>
 
 @property (nonatomic, weak) id<YDRequestTaskDelegate>delegate;
 @property (nonatomic, strong) NSURL *requestURL;//请求地址

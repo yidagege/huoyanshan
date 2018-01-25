@@ -28,6 +28,14 @@
 
 @implementation AVPlayerCacheViewController
 
+- (void)dealloc{
+    [self.player removeObserver:self forKeyPath:@"progress"];
+    [self.player removeObserver:self forKeyPath:@"duration"];
+    [self.player removeObserver:self forKeyPath:@"cacheProgress"];
+
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];

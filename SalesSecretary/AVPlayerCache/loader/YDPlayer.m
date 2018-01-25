@@ -23,6 +23,11 @@
 
 @implementation YDPlayer
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.player removeObserver:self forKeyPath:@"rate"];
+}
+
 - (instancetype)initWithURL:(NSURL *)url{
     if (self == [super init]) {
         self.url = url;

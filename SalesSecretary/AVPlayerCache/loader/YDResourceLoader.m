@@ -53,7 +53,7 @@
 }
 
 - (void)requestTaskDidFailWithError:(NSError *)error{
-    
+    //加载数据错误的处理
 }
 
 #pragma mark --处理loadingrequest
@@ -116,19 +116,25 @@
     loadingRequest.contentInformationRequest.contentType = CFBridgingRelease(contentType);
     loadingRequest.contentInformationRequest.byteRangeAccessSupported = YES;
     loadingRequest.contentInformationRequest.contentLength = self.requestTask.fileLength;
+    
     //读文件，填充数据
-    NSUInteger cachelength = self.requestTask.cacheLength;
-    NSUInteger requestdOffset = loadingRequest.dataRequest.requestedOffset;
+    NSUInteger cacheLength = self.requestTask.cacheLength;
+    NSUInteger requestedOffset = loadingRequest.dataRequest.requestedOffset;
     if (loadingRequest.dataRequest.currentOffset != 0) {
-        requestdOffset = loadingRequest.dataRequest.currentOffset;
+        requestedOffset = loadingRequest.dataRequest.currentOffset;
     }
-    NSUInteger canReadLength = cachelength - (requestdOffset - self.requestTask.requestOffset);
+    NSUInteger canReadLength = cacheLength - (requestedOffset - self.requestTask.requestOffset);
     NSUInteger respondLength = MIN(canReadLength, loadingRequest.dataRequest.requestedLength);
-    [loadingRequest.dataRequest respondWithData:[YDFileHandle readTempFileDataWithOffset:requestdOffset - self.requestTask.requestOffset length:respondLength]];
+    
+    //    NSLog(@"cacheLength %ld, requestedOffset %lld, currentOffset %lld, canReadLength %ld, requestedLength %ld", cacheLength, loadingRequest.dataRequest.requestedOffset, loadingRequest.dataRequest.currentOffset,canReadLength, loadingRequest.dataRequest.requestedLength);
+    
+    [loadingRequest.dataRequest respondWithData:[YDFileHandle readTempFileDataWithOffset:requestedOffset - self.requestTask.requestOffset length:respondLength]];
+    
     //如果完全响应了所需要的数据，则完成
-    NSUInteger nowendoffset = requestdOffset + canReadLength;
-    NSUInteger reqendoffset = loadingRequest.dataRequest.requestedOffset + loadingRequest.dataRequest.requestedLength;
-    if (nowendoffset >= reqendoffset) {
+    NSUInteger nowendOffset = requestedOffset + canReadLength;
+    NSUInteger reqEndOffset = loadingRequest.dataRequest.requestedOffset + loadingRequest.dataRequest.requestedLength;
+    if (nowendOffset >= reqEndOffset) {
+        [loadingRequest finishLoading];
         return YES;
     }
     return NO;

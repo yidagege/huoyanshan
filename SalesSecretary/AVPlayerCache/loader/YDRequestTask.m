@@ -26,9 +26,16 @@
 }
 
 - (void)start{
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self.requestURL originalSchemeURL] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:RequestTimeout];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[self.requestURL originalSchemeURL] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:RequestTimeout];
+//    if (self.requestOffset > 0) {
+//        [request addValue:[NSString stringWithFormat:@"bytes=%ld-%ld",self.requestOffset,self.fileLength -1] forHTTPHeaderField:@"Range"];
+//    }
+//    self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+//    self.task = [self.session dataTaskWithRequest:request];
+//    [self.task resume];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[self.requestURL originalSchemeURL] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:RequestTimeout];
     if (self.requestOffset > 0) {
-        [request addValue:[NSString stringWithFormat:@"bytes=%ld-%ld",self.requestOffset,self.fileLength -1] forHTTPHeaderField:@"Range"];
+        [request addValue:[NSString stringWithFormat:@"bytes=%ld-%ld", self.requestOffset, self.fileLength - 1] forHTTPHeaderField:@"Range"];
     }
     self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
     self.task = [self.session dataTaskWithRequest:request];
