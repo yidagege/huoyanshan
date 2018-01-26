@@ -32,7 +32,7 @@
 }
 
 + (NSData *)readTempFileDataWithOffset:(NSUInteger)offset length:(NSUInteger)length{
-    NSFileHandle *handle = [NSFileHandle fileHandleForWritingAtPath:[NSString tempFilePath]];
+    NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:[NSString tempFilePath]];
     [handle seekToFileOffset:offset];
     return [handle readDataOfLength:length];
 }

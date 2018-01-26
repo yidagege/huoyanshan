@@ -56,6 +56,7 @@ didReceiveResponse:(NSURLResponse *)response
     if (self.cancel) {
         return;
     }
+    NSLog(@"response: %@",response);
     completionHandler(NSURLSessionResponseAllow);
     NSHTTPURLResponse *httpresponse = (NSHTTPURLResponse *)response;
     NSString *contentrange = [[httpresponse allHeaderFields] objectForKey:@"Content-Range"];

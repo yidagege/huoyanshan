@@ -110,9 +110,11 @@
     self.songName.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.songName];
     
-    self.currentTime = [[UILabel alloc]initWithFrame:CGRectMake(0, 380, 45, 20)];
+    self.currentTime = [[UILabel alloc]initWithFrame:CGRectMake(0, 380, 50, 20)];
+    self.currentTime.textColor = [UIColor redColor];
     [self.view addSubview:self.currentTime];
-    self.duration = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 45, 380, 45, 20)];
+    self.duration = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 45, 380, 50, 20)];
+    self.duration.textColor = [UIColor redColor];
     [self.view addSubview:self.duration];
     
     self.progressSlider = [[UISlider alloc]initWithFrame:CGRectMake(60, 380, self.view.frame.size.width - 120, 30)];
