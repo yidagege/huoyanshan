@@ -93,10 +93,7 @@
             [_player play];
         }
     }];
-    
-    
 }
-
 
 - (NSString *)filePath {
     if (!_filePath) {
@@ -106,11 +103,6 @@
         if (isCreateSuccess) _filePath = [folderName stringByAppendingPathComponent:@"kyida.m4a"];
     }
     return _filePath;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
