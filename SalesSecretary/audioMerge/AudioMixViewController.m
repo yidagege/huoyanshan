@@ -90,6 +90,8 @@
         if (session.status == AVAssetExportSessionStatusCompleted) {
             NSLog(@"合并成功----%@",outPutFilePath);
             _player = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:outPutFilePath] error:nil];
+            _player.enableRate = YES;
+            _player.rate = 2;
             [_player play];
         }
     }];
